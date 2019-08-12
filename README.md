@@ -1,6 +1,6 @@
 # XRTransfer
 Code and dataset for "Transfer Learning Between Related Tasks Using Expected Label Proportions" paper.
-To run this code you need to download python 2.7, numpy package and the [DyNet framework](https://github.com/clab/dynet)
+To run this code you need to download python 2.7, numpy package and the [DyNet framework](https://github.com/clab/dynet).
 # Data
 1. To use this code you need to download the glove embeddings vectors, you can download
 them [from this link](https://drive.google.com/file/d/1fa2xOnlHJ5A8-Y480Vs5_uGp8X2-PhuM/view)  
