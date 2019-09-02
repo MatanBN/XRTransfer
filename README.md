@@ -1,5 +1,5 @@
 # XRTransfer
-Code and dataset for EMNLP2019 [paper]() "Transfer Learning Between Related Tasks Using Expected Label Proportions".
+Code and dataset for EMNLP2019 paper "Transfer Learning Between Related Tasks Using Expected Label Proportions".
 To run this code you need to download python 2.7, numpy package and the [DyNet framework](https://github.com/clab/dynet).
 # Data
 1. To use this code you need to download the glove embeddings vectors, you can download
