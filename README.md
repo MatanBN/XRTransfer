@@ -18,3 +18,22 @@ To train an aspect/fragment based model you need to run each of the following st
 6. Estimate the distribution of aspect-level sentiment given sentence-level sentiment, this provides the signal to train a model using the xr loss-to do so run "python estimate_dists.py", this will create a .npy file which will contain the conditional distributions.
 7. Train a fragment based model using the xr loss-to do so run "python run_fragment_based_model.py --train data/xr/train --test data/semeval16/test", this will train a fragment based model and test it on on the semeval-2016 test set, the model will be saved so you can also test it later on the semval15 test so if you run "python run_fragment_based_model.py --test data/semeval15/test". Note that due to the very large corpus, the training procedure might take a while (in our server it took 4-5 days).
 8. If you want to further finetune the fragment-based model to an aspect-based model run "python finetune_aspect_based_model.py", it will finetune it using the semeval16 dataset, if you want to use the semeval15 dataset, run "python finetune_aspect_based_model.py --train data/semeval15/train --dev data/semeval15/dev --test data/semeval15/test --model_path BiLSTMAttFinetuning2015"
+
+# Cite
+If you use the code, please cite the following paper:
+```
+@inproceedings{ben-noach-goldberg-2019-transfer,
+    title = "Transfer Learning Between Related Tasks Using Expected Label Proportions",
+    author = "Ben Noach, Matan  and
+      Goldberg, Yoav",
+    booktitle = "Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)",
+    month = nov,
+    year = "2019",
+    address = "Hong Kong, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/D19-1004",
+    doi = "10.18653/v1/D19-1004",
+    pages = "31--42",
+    abstract = "Deep learning systems thrive on abundance of labeled training data but such data is not always available, calling for alternative methods of supervision. One such method is expectation regularization (XR) (Mann and McCallum, 2007), where models are trained based on expected label proportions. We propose a novel application of the XR framework for transfer learning between related tasks, where knowing the labels of task A provides an estimation of the label proportion of task B. We then use a model trained for A to label a large corpus, and use this corpus with an XR loss to train a model for task B. To make the XR framework applicable to large-scale deep-learning setups, we propose a stochastic batched approximation procedure. We demonstrate the approach on the task of Aspect-based Sentiment classification, where we effectively use a sentence-level sentiment predictor to train accurate aspect-based predictor. The method improves upon fully supervised neural system trained on aspect-level data, and is also cumulative with LM-based pretraining, as we demonstrate by improving a BERT-based Aspect-based Sentiment model.",
+}
+```
